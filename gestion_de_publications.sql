@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 12, 2020 at 02:38 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.4
+-- Hôte : 127.0.0.1
+-- Généré le : Dim 17 mai 2020 à 01:21
+-- Version du serveur :  10.4.11-MariaDB
+-- Version de PHP : 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,27 +18,27 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gestion de publications`
+-- Base de données : `gestion de publications`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `post`
+-- Structure de la table `post`
 --
 
 CREATE TABLE `post` (
   `id` int(11) NOT NULL,
+  `title` varchar(50) NOT NULL,
   `content` varchar(500) NOT NULL,
   `date` date NOT NULL,
-  `comments` varchar(100) NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Structure de la table `user`
 --
 
 CREATE TABLE `user` (
@@ -49,44 +49,44 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `post`
+-- Index pour la table `post`
 --
 ALTER TABLE `post`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `user`
+-- Index pour la table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `post`
+-- AUTO_INCREMENT pour la table `post`
 --
 ALTER TABLE `post`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `post`
+-- Contraintes pour la table `post`
 --
 ALTER TABLE `post`
   ADD CONSTRAINT `post_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
