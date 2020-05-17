@@ -31,9 +31,8 @@ Application de gestion de publications (blog) avec le langage PHP avec une base 
 1. import sql file (gestion_de_publications.sql) to mysql 
 
 2. Change mysql informations in 'config.php' :
-    ```
+
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'phpmysami');
 define('DB_NAME', 'gestion de publications');
-```
